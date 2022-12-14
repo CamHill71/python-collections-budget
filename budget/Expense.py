@@ -52,12 +52,12 @@ class Expenses():
             or x.category == 'Utilities'
             or x.category == 'Mortgage'}
 
-        unnecessary_expenses = set(
-            self.list, lambda x: not x.necessary_expenses or not x.food_expenses)
-
         food_expenses = {
             x for x in self.list
             if x.category == 'Groceries'
             or x.category == 'Eating Out'}
+
+        unnecessary_expenses = set(
+            self.list) - necessary_expenses - food_expenses
 
         return [necessary_expenses, food_expenses, unnecessary_expenses]
