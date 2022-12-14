@@ -35,8 +35,7 @@ class BudgetList():
         self.iter_o = iter(self.overages)
         return self
 
-    def __next__(self):
-        """ """
+    def __next__(self):        
         try:
             return self.iter_e.__next__()
         except StopIteration as stop:
@@ -48,6 +47,7 @@ def main():
     myBudgetList = BudgetList(1200)
     expenses = Expense.Expenses()
     expenses.read_expenses("data/spending_data.csv")
+
     for expense in expenses.list:
         myBudgetList.append(expense.amount)
 
