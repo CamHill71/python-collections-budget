@@ -60,4 +60,4 @@ class Expenses():
             if x.category == 'Groceries'
             or x.category == 'Eating Out'}
 
-        return necessary_expenses    
+        return necessary_expenses, unnecessary_expenses , food_expenses 
